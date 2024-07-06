@@ -8,7 +8,36 @@
 
     <body>
         <section class="welcome-text">
-            <h1> <span class="auto-typed"> Welcome </span> </h1>
+            <h1> <span class="auto-typed">W</span> <span class="cursor">|</span></h1>
         </section>
+
+        <div class="intro-header">
+            <h2> Hi, I'm <br> Kevin Lindemann </h2>
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const textElement = document.querySelector(".auto-typed");
+                const cursorElement = document.querySelector(".cursor");
+                const welcomeTextElement = document.querySelector(".welcome-text");
+                const welcomeText = "Welcome";
+                let index = 1;
+
+                function type() {
+                    if(index < welcomeText.length) {
+                        textElement.textContent += welcomeText.charAt(index);
+                        index++;
+                        setTimeout(type, 375);
+                    } else {
+                        cursorElement.style.display = 'none';
+                        //Make the welcome text slide up to reveal the text underneath. 
+                        setTimeout(() => {
+                            welcomeTextElement.style.transform = 'translateY(-100%)';
+                        }, 200);
+                    }
+                }
+                setTimeout(type, 500);
+            });
+        </script>
     </body>
 </html>
