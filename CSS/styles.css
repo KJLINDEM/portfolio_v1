@@ -14,7 +14,7 @@
     --fs-welcome: 16vw;
     --fs-xl: 6rem;
     --fs-l: 4rem;
-    --fs-m: 2rem;
+    --fs-m: 3rem;
     --fs-s: 1rem;
 }
 
@@ -54,9 +54,15 @@ html {
 }
 
 .intro-header {
-    border: solid 1px red;
+    display: flex;
 }
 
 h2 {
     font-size: var(--fs-xl);
+}
+
+p {
+    font-size: var(--fs-m);
+    margin: 0;
+    padding: 0;
 }
